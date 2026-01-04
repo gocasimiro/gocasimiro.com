@@ -73,23 +73,29 @@ const legaliza = () => {
 
 	const botaOPano = puxaOPano
 
-	document.querySelector('h4').addEventListener('mouseenter', () => {
-		puxaOPano('ul', 'display', 'inline-block')
-	})
-	document.querySelector('h4').addEventListener('touchstart', (event) => {
-		event.preventDefault()
-		puxaOPano('ul', 'display', 'inline-block')
-	})
+	document
+		.getElementById('menu_trigger')
+		.addEventListener('mouseenter', () => {
+			puxaOPano('ul', 'display', 'inline-block')
+		})
+	document
+		.getElementById('menu_trigger')
+		.addEventListener('touchstart', (event) => {
+			event.preventDefault()
+			puxaOPano('ul', 'display', 'inline-block')
+		})
 
 	document.getElementById('why_cta').addEventListener('click', () => {
 		if (document.getElementById('why').style.display === 'block') {
 			botaOPano('#why', 'display', 'none')
 			botaOPano('body', 'height', '100%')
+			puxaOPano('ul', 'display', 'inline-block')
 			window.cabeca.foco = false
 			return
 		}
 		puxaOPano('#why', 'display', 'block')
 		puxaOPano('body', 'height', '100%')
+		botaOPano('ul', 'display', 'none')
 		window.cabeca.foco = true
 	})
 	document
@@ -99,6 +105,7 @@ const legaliza = () => {
 			if (document.getElementById('why').style.display === 'block') {
 				botaOPano('#why', 'display', 'none')
 				botaOPano('body', 'height', '100%')
+				botaOPano('ul', 'display', 'none')
 				return
 			}
 			puxaOPano('#why', 'display', 'block')

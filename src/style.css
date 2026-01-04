@@ -55,12 +55,24 @@ h2 {
 		}
 	}
 }
-h4 {
+.clean-btn {
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	font: inherit;
+	color: inherit;
+	cursor: pointer;
+	text-align: inherit;
+}
+
+#menu_trigger {
 	display: flex;
 	margin: 0 0 1rem;
 	font-size: 2rem;
+	font-weight: bold;
 }
-h4 span {
+#menu_trigger span {
 	margin-right: 0.5rem;
 	width: auto;
 }
@@ -109,7 +121,7 @@ footer {
 .languages {
 	font-weight: 500;
 	opacity: 0.9;
-	& span {
+	& button {
 		cursor: pointer;
 		font-size: 1.5rem;
 		margin-right: 0.5rem;
