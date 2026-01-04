@@ -98,19 +98,17 @@ const legaliza = () => {
 		botaOPano('ul', 'display', 'none')
 		window.cabeca.foco = true
 	})
-	document
-		.getElementById('why_cta')
-		.addEventListener('touchstart', (event) => {
-			event.preventDefault()
-			if (document.getElementById('why').style.display === 'block') {
-				botaOPano('#why', 'display', 'none')
-				botaOPano('body', 'height', '100%')
-				botaOPano('ul', 'display', 'none')
-				return
-			}
-			puxaOPano('#why', 'display', 'block')
-			puxaOPano('body', 'height', 'auto')
-		})
+	document.getElementById('why_cta').addEventListener('touchstart', () => {
+		if (document.getElementById('why').style.display === 'block') {
+			botaOPano('#why', 'display', 'none')
+			botaOPano('body', 'height', '100%')
+			puxaOPano('ul', 'display', 'inline-block')
+			return
+		}
+		puxaOPano('#why', 'display', 'block')
+		puxaOPano('body', 'height', 'auto')
+		botaOPano('ul', 'display', 'none')
+	})
 }
 
 const cagueta = (consciente) => {
